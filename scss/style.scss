@@ -1,0 +1,101 @@
+@import './_resets', './_variables';
+
+body {
+    background-color: $verydarkblue;
+    font-family: $font-family;
+}
+
+
+main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+
+    .rating-card,
+    .thank-card {
+        background-color: $darkblue;
+        padding: 25px;
+        border-radius: 15px;
+    }
+
+    .rating-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 380px;
+        height: 380px;
+
+        img {
+            height: 35px;
+            width: 35px;
+            background-color: $darkbluestar;
+            border-radius: 30px;
+            padding: 12px;
+        }
+
+        h2 {
+            margin-top: 15px;
+        }
+
+        p {
+            color: $lightgray;
+            margin: 0;
+            font-size: $font-size-p;
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 0;
+
+            li {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: $lightgray;
+                background-color: $darkbluestar;
+                height: 50px;
+                width: 55px;
+                border-radius: 100%;
+                padding-top: 3px;
+                font-size: $font-size-p;
+            }
+
+            li:hover {
+                background-color: $lightgray;
+                color: $white;
+                cursor: pointer;
+            }
+
+            .clicked {
+                background-color: $primary;
+                color: $white;
+                cursor: pointer;
+            }
+        }
+
+        #submit-rating {
+            background-color: $primary;
+            color: $white;
+            border: none;
+            padding: 10px;
+            font-weight: map-get($font-weights, bold);
+            border-radius: 15px;
+        }
+
+        #submit-rating:hover {
+            background-color: $white;
+            color: $primary;
+            cursor: pointer;
+        }
+
+    }
+
+    .thank-card {
+        display: none;
+        width: 490px;
+    }
+}
