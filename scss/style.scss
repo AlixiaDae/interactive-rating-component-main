@@ -7,11 +7,11 @@ body {
 
 
 main {
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     color: $white;
+    flex-grow: 1;
 
     .rating-card,
     .thank-card {
@@ -25,14 +25,23 @@ main {
         flex-direction: column;
         justify-content: space-evenly;
         width: 380px;
-        height: 380px;
+        height: 360px;
+        transition: all .3s ease;
+        opacity: 1;
+        z-index: 3;
 
         img {
             height: 35px;
             width: 35px;
-            background-color: $darkbluestar;
+            background-color: $borderbackground;
             border-radius: 30px;
             padding: 12px;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
 
         h2 {
@@ -56,7 +65,7 @@ main {
                 justify-content: center;
                 align-items: center;
                 color: $lightgray;
-                background-color: $darkbluestar;
+                background-color: $borderbackground;
                 height: 50px;
                 width: 55px;
                 border-radius: 100%;
@@ -81,9 +90,11 @@ main {
             background-color: $primary;
             color: $white;
             border: none;
-            padding: 10px;
+            padding: 12px;
             font-weight: map-get($font-weights, bold);
-            border-radius: 15px;
+            border-radius: 20px;
+            font-size: 15px;
+            letter-spacing: 1px;
         }
 
         #submit-rating:hover {
@@ -95,7 +106,50 @@ main {
     }
 
     .thank-card {
-        display: none;
-        width: 490px;
+        padding-top: 35px;
+        position: absolute;
+        width: 390px;
+        height: 380px;
+        transition: all .3s ease;
+        opacity: 0;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+
+        .selected-rating {
+            color: $primary;
+            background-color: $borderbackground;
+            padding: 5px;
+            width: 190px;
+            border-radius: 15px;
+        }
+
+        .thank-message {
+            color: $lightgray;
+            font-size: $font-size-p;
+            line-height: 1.5;
+            cursor: default;
+        }
+    }
+
+    .visible {
+        opacity: 1;
+    }
+
+    .hidden {
+        opacity: 0;
+        z-index: 1;
+    }
+}
+
+footer {
+    text-align: center;
+    color: $white;
+
+    a {
+        color: $primary;
     }
 }
